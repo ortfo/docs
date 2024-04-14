@@ -1,0 +1,7 @@
+:root {
+  --vp-c-brand-1: #e57c08;
+  --docsearch-primary-color: var(--vp-c-brand-1);
+  --docsearch-logo-color: var(--vp-c-brand-1);
+  --vp-c-brand-2: #d16f07;
+  --vp-c-brand-3: #bd6d17;
+}
