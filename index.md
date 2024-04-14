@@ -3,23 +3,22 @@
 layout: home
 
 hero:
-  name: "ortfo"
-  text: "ortfo's documentation"
-  tagline: My great project tagline
+  name: "ortfo:"
+  text: "Obsidian for all of your projects"
+  tagline: A great way to manage your portfolio
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: What is ortfo?
+      link: /guide/what-is-ortfo
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Getting Started
+      link: /guide/getting-started
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Standards-based
+    details: Describe your works in Markdown files. Export everything into a JSON file.
+  - title: Co-locate portfolio articles with your projects
+    details: With Scattered mode, you can keep your portfolio articles in the same directory as your projects.
+  - title: Extensible
+    details: ortfo features a rich exporter plugin system that you can very easily tap into by writing a single YAML file.
 ---
-

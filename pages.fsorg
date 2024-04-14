@@ -1,0 +1,39 @@
+ROOT .
+
+FILE index.md
+
+guide {
+	FILE what-is-ortfo.md
+	FILE getting-started.md
+	FILE json-schemas.md
+}
+
+db {
+	FILE index.md
+	FILE getting-started.md
+	FILE database-format.md
+	FILE markdown.md
+	FILE getting-started.md
+	FILE scattered-mode.md
+	FILE configuration.md
+	FILE caching.md
+	FILE client-libraries.md
+	FILE internationalization.md
+	FILE layouts.md
+	commands {
+		// TODO generate from cobra's GenMarkdownTree
+		FILE index.md
+		FILE add.md
+		FILE build.md
+		FILE schemas.md
+		FILE replicate.md
+		FILE completion.md
+		FILE global-options.md
+	}
+	exporters {
+		FILE index.md
+		FILE builtin.md
+		FILE custom.md
+		FILE development.md
+	}
+}
