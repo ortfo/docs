@@ -109,7 +109,7 @@ Maps footnote references to their definitions. See [Footnotes](/db/markdown.md#f
 
 A two-dimensional array that represents the layout of the work. Each element of the array is a string that represents a [content block](#blocks)'s ID.
 
-_See [Layouts](/db/complex-layouts.md)_
+_See [Layouts](/db/layouts.md)_
 
 #### blocks
 
