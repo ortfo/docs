@@ -31,6 +31,10 @@ const ortfodbSidebar = [
         text: "Markdown",
         link: "db/markdown",
       },
+			{
+				text: "Internationalization",
+				link: "db/internationalization",
+			},
       {
         text: "Thumbnail generation",
         link: "db/thumbnails",
