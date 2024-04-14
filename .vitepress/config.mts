@@ -22,6 +22,10 @@ export default defineConfig({
       { text: "ortfo/db", link: "/db/" },
     ],
 
+    outline: {
+      level: "deep",
+    },
+
     sidebar: {
       "/guide/": {
         items: [
@@ -52,10 +56,10 @@ export default defineConfig({
             text: "Getting started",
             link: "/getting-started",
           },
-					{
-						text: "Your first description.md file",
-						link: "/your-first-description-file"
-					},
+          {
+            text: "Your first description.md file",
+            link: "/your-first-description-file",
+          },
           {
             text: "Scattered mode",
             link: "/scattered-mode",
