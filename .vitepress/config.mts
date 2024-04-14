@@ -1,6 +1,95 @@
 import { defineConfig } from "vitepress"
 import footnote from "markdown-it-footnote"
+import deflists from "markdown-it-deflist"
 
+const ortfodbSidebar = [
+  {
+    text: "Introduction",
+    items: [
+      {
+        text: "Getting started",
+        link: "db/getting-started",
+      },
+      {
+        text: "Your first description.md file",
+        link: "db/your-first-description-file",
+      },
+      {
+        text: "Database format",
+        link: "db/database-format",
+      },
+    ],
+  },
+  {
+    text: "Features",
+    items: [
+      {
+        text: "Scattered mode",
+        link: "db/scattered-mode",
+      },
+      {
+        text: "Markdown",
+        link: "db/markdown",
+      },
+      {
+        text: "Thumbnail generation",
+        link: "db/thumbnails",
+      },
+      {
+        text: "Primary colors extraction",
+        link: "db/colors",
+      },
+      {
+        text: "Complex layouts",
+        link: "db/layouts",
+      },
+      {
+        text: "JSON Schemas",
+        link: "db/json-schemas",
+      },
+    ],
+  },
+  {
+    text: "Exporters",
+    base: "db/exporters/",
+    items: [
+      {
+        text: "Introduction",
+        link: "/",
+      },
+      {
+        text: "Built-in exporters (SSH, FTP, Git, Cloud services)",
+        link: "/builtin",
+      },
+      {
+        text: "The custom exporter",
+        link: "/custom",
+      },
+      {
+        text: "Writing your own exporter",
+        link: "/development",
+      },
+    ],
+  },
+  {
+    text: "CLI Reference",
+    base: "/db/commands/",
+    collapsed: true,
+    items: [
+      { text: "Global options", link: "/" },
+      { text: "add", link: "/add" },
+      { text: "build", link: "/build" },
+      { text: "schemas", link: "/schemas" },
+      { text: "replicate", link: "/replicate" },
+      { text: "completion", link: "/completion" },
+    ],
+  },
+
+  {
+    text: "Type definitions for Python, Rust and TypeScript",
+    link: "/client-libraries",
+  },
+]
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: "en-US",
@@ -9,13 +98,18 @@ export default defineConfig({
   markdown: {
     config: (md) => {
       md.use(footnote)
+      md.use(deflists)
     },
   },
   themeConfig: {
     search: {
       provider: "local",
     },
-    logo: "/logo.png",
+    logo: {
+      dark: "/logo-dark.svg",
+      light: "/logo-light.svg",
+    },
+
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },
@@ -27,92 +121,23 @@ export default defineConfig({
     },
 
     sidebar: {
-      "/guide/": {
-        items: [
-          {
-            base: "/guide/",
-            text: "Getting started",
-            items: [
-              { text: "What is ortfo?", link: "/what-is-ortfo" },
-              { text: "Quick start", link: "/getting-started" },
-              { text: "JSON Schemas", link: "/json-schemas" },
-            ],
-          },
-          {
-            base: "/db/",
-            text: "ortfo/db",
-            items: [
-              { text: "Introduction", link: "/" },
-              { text: "Scattered mode", link: "/scattered-mode" },
-              { text: "Exporters", link: "/exporters/" },
-            ],
-          },
-        ],
-      },
-      "/db/": {
-        base: "/db/",
-        items: [
-          {
-            text: "Getting started",
-            link: "/getting-started",
-          },
-          {
-            text: "Your first description.md file",
-            link: "/your-first-description-file",
-          },
-          {
-            text: "Scattered mode",
-            link: "/scattered-mode",
-          },
-          {
-            text: "Markdown",
-            link: "/markdown",
-          },
-          {
-            text: "Database format",
-            link: "/database-format",
-          },
-          {
-            text: "Exporters",
-            base: "/db/exporters/",
-            items: [
-              {
-                text: "Introduction",
-                link: "/",
-              },
-              {
-                text: "Built-in exporters (SSH, FTP, Git, Cloud services)",
-                link: "/builtin",
-              },
-              {
-                text: "The custom exporter",
-                link: "/custom",
-              },
-              {
-                text: "Writing your own exporter",
-                link: "/development",
-              },
-            ],
-          },
-          {
-            text: "CLI Reference",
-            base: "/db/commands/",
-            items: [
-              { text: "Global options", link: "/" },
-              { text: "add", link: "/add" },
-              { text: "build", link: "/build" },
-              { text: "schemas", link: "/schemas" },
-              { text: "replicate", link: "/replicate" },
-              { text: "completion", link: "/completion" },
-            ],
-          },
+      "/guide/": [
+        {
+          base: "/guide/",
+          text: "Getting started",
+          items: [
+            { text: "What is ortfo?", link: "/what-is-ortfo" },
+            { text: "Quick start", link: "/getting-started" },
+            { text: "JSON Schemas", link: "/json-schemas" },
+          ],
+        },
+        {
+          text: "ortfo/db",
+          items: ortfodbSidebar,
+        },
+      ],
 
-          {
-            text: "Type definitions for Python, Rust and TypeScript",
-            link: "/client-libraries",
-          },
-        ],
-      },
+      "/db/": ortfodbSidebar,
     },
 
     socialLinks: [{ icon: "github", link: "https://github.com/ortfo" }],

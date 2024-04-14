@@ -20,6 +20,8 @@ db {
 	FILE client-libraries.md
 	FILE internationalization.md
 	FILE layouts.md
+	FILE colors.md
+	FILE thumbnails.md
 	commands {
 		// TODO generate from cobra's GenMarkdownTree
 		FILE index.md

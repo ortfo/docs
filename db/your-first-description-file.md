@@ -49,6 +49,8 @@ This is a paragraph of text. It can contain **bold**, *italic*, and [links](http
 [Link to the source code](https://github.com/ortfo/db)
 ```
 
+### Blocks
+
 Description files are separated in "blocks": blocks are separated by an empty line.
 There are:
 

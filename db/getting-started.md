@@ -1,8 +1,3 @@
----
-next:
-    link: /db/your-first-description-file
----
-
 # Getting started
 ## Installation
 ### Binaries
