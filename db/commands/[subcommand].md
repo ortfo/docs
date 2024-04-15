@@ -1,3 +1,7 @@
+---
+editLink: false
+---
+
 <script setup>
   import { data as commands } from './[subcommand].data.js'
 </script>
