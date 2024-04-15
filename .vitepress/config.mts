@@ -99,6 +99,10 @@ const ortfodbSidebar = [
     text: "Type definitions for Python, Rust and TypeScript",
     link: "/db/client-libraries",
   },
+  {
+    text: "Release notes",
+    link: "/db/changelog",
+  },
 ] satisfies DefaultTheme.SidebarItem[]
 
 // https://vitepress.dev/reference/site-config
