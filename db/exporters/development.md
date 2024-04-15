@@ -20,7 +20,7 @@ Go exporters
 
 You can quickly initialize an example exporter by running
 
-```sh-session
+```shellsession
 ortfodb exporters init my-exporter
 ```
 

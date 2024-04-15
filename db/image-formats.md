@@ -6,7 +6,7 @@ Under the hood, we use the [ImageMagick](https://imagemagick.org/index.php) libr
 
 While this may vary from system to system, the following formats are generally supported:
 
-```sh-session
+```shellsession
 $ magick identify -list format
   Format  Module    Mode  Description
 -------------------------------------------------------------------------------
