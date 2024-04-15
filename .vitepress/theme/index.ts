@@ -1,4 +1,11 @@
 import DefaultTheme from "vitepress/theme"
 import "./custom.css"
+import { Theme } from "vitepress"
+import JSONSchema from "./JSONSchema.vue"
 
-export default DefaultTheme
+export default {
+  extends: DefaultTheme,
+  enhanceApp({ app }) {
+    app.component("JSONSchema", JSONSchema)
+  },
+} satisfies Theme
