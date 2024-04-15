@@ -1,1 +1,1 @@
-# Client libraries (WIP)
+# Client libraries <Badge type=warning text=beta />

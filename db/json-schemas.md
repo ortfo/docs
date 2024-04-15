@@ -2,7 +2,13 @@
 
 ortfo/db exports [JSON Schemas](https://json-schema.org/) for the different data files it uses.
 
-These schemas serve as both validation when running the program, and as a way to provide a nice [auto-complete experience in your editor](#ide-integrations), provided that it supports JSON schemas.
+These schemas serve as both validation when running the program, and as a way to provide a nice [auto-complete experience in your editor](#using-it-in-your-editor), provided that it supports JSON schemas.
+
+::: tip Client libraries
+
+Want type definitions in your code? Check out the [client libraries](/db/client-libraries.md) <Badge type=warning text=beta /> for your language.
+
+:::
 
 ## Getting the schemas
 
@@ -83,7 +89,7 @@ VSCode
 
 Neovim
 : [coc-yaml](https://github.com/neoclide/coc-yaml), a [CoC](https://github.com/neoclide/coc.nvim) plugin
-: Any plugin, such as [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) should also do the trick
+: Any LSP client plugin, such as [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) should also do the trick
 
 _Other editors_
-: Please [contribute to the docs](https://github.com/ortfo/website/edit/main/db/json-schemas.md)
+: Please contribute to the docs (see "Edit this page" just below)
