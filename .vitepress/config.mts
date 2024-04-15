@@ -8,15 +8,15 @@ const ortfodbSidebar = [
     items: [
       {
         text: "Getting started",
-        link: "db/getting-started",
+        link: "/db/getting-started",
       },
       {
         text: "Your first description.md file",
-        link: "db/your-first-description-file",
+        link: "/db/your-first-description-file",
       },
       {
         text: "Database format",
-        link: "db/database-format",
+        link: "/db/database-format",
       },
     ],
   },
@@ -25,31 +25,31 @@ const ortfodbSidebar = [
     items: [
       {
         text: "Scattered mode",
-        link: "db/scattered-mode",
+        link: "/db/scattered-mode",
       },
       {
         text: "Markdown",
-        link: "db/markdown",
+        link: "/db/markdown",
       },
 			{
 				text: "Internationalization",
-				link: "db/internationalization",
+				link: "/db/internationalization",
 			},
       {
         text: "Thumbnail generation",
-        link: "db/thumbnails",
+        link: "/db/thumbnails",
       },
       {
         text: "Primary colors extraction",
-        link: "db/colors",
+        link: "/db/colors",
       },
       {
         text: "Complex layouts",
-        link: "db/layouts",
+        link: "/db/layouts",
       },
       {
         text: "JSON Schemas",
-        link: "db/json-schemas",
+        link: "/db/json-schemas",
       },
     ],
   },
