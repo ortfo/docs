@@ -106,7 +106,7 @@ export default defineConfig({
   lang: "en-US",
   title: "ortfo",
   description: "Make & manage your own homemade portfolio easily",
-	srcExclude: ["**/README.md", "ortfodb/**/*.md"],
+  srcExclude: ["**/README.md", "ortfodb/**/*.md"],
   head: [
     ...faviconHead(),
     [
@@ -124,6 +124,12 @@ export default defineConfig({
     config: (md) => {
       md.use(footnote)
       md.use(deflists)
+    },
+    theme: {
+      // Waiting for https://github.com/shikijs/textmate-grammars-themes/pull/48
+      // light: "snazzy-light",
+      light: "github-light",
+      dark: "one-dark-pro",
     },
   },
   themeConfig: {
