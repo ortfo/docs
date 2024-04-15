@@ -64,37 +64,35 @@ const ortfodbSidebar = [
   },
   {
     text: "Exporters",
-    base: "/db/exporters/",
     items: [
       {
         text: "Introduction",
-        link: "/",
+        link: "/db/exporters/introduction",
       },
       {
         text: "Built-in exporters (SSH, FTP, Git, Cloud services)",
-        link: "/builtin",
+        link: "/db/exporters/builtin",
       },
       {
         text: "The custom exporter",
-        link: "/custom",
+        link: "/db/exporters/custom",
       },
       {
         text: "Writing your own exporter",
-        link: "/development",
+        link: "/db/exporters/development",
       },
     ],
   },
   {
     text: "CLI Reference",
-    base: "/db/commands/",
     collapsed: true,
     items: [
-      { text: "Global options", link: "/" },
-      { text: "add", link: "/add" },
-      { text: "build", link: "/build" },
-      { text: "schemas", link: "/schemas" },
-      { text: "replicate", link: "/replicate" },
-      { text: "completion", link: "/completion" },
+      { text: "Global options", link: "/db/commands/" },
+      { text: "add", link: "/db/commands/add" },
+      { text: "build", link: "/db/commands/build" },
+      { text: "schemas", link: "/db/commands/schemas" },
+      { text: "replicate", link: "/db/commands/replicate" },
+      { text: "completion", link: "/db/commands/completion" },
     ],
   },
   {
