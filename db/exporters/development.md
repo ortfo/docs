@@ -12,7 +12,7 @@ YAML exporters
 : Most of the exporters can be expressed that way. This does not require any development environment setup, but only allows running shell commands.
 
 Go exporters
-: For more complex exporters, you can write a Go program that implements the `Exporter` interface. This allows you to do more complex things, such as reading the database file, modifying it, and writing it back. However, for now, Go exporters can only be made available to ortfo by [contributing to the project](https://github.com/ortfo/db).
+: For more complex exporters, you can write a Go program that implements the `Exporter` interface. However, for now, Go exporters can only be made available to ortfo by [contributing to the project](https://github.com/ortfo/db).
 
 ## YAML exporters
 
