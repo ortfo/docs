@@ -2,6 +2,7 @@ import { DefaultTheme, defineConfig } from "vitepress"
 import footnote from "markdown-it-footnote"
 import deflists from "markdown-it-deflist"
 import { faviconHead } from "./favicon"
+import subcommand from "../db/commands/[subcommand].paths"
 
 const ortfodbSidebar = [
   {
@@ -87,12 +88,11 @@ const ortfodbSidebar = [
     text: "CLI Reference",
     collapsed: true,
     items: [
-      { text: "Global options", link: "/db/commands/" },
-      { text: "add", link: "/db/commands/add" },
-      { text: "build", link: "/db/commands/build" },
-      { text: "schemas", link: "/db/commands/schemas" },
-      { text: "replicate", link: "/db/commands/replicate" },
-      { text: "completion", link: "/db/commands/completion" },
+      { text: "Global options", link: "/db/commands/global-options" },
+      ...subcommand.paths().map(({ params: { subcommand } }) => ({
+        text: subcommand.replace("-", " "),
+        link: `/db/commands/${subcommand}`,
+      })),
     ],
   },
   {
