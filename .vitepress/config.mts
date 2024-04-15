@@ -61,6 +61,10 @@ const ortfodbSidebar = [
         text: "JSON Schemas",
         link: "/db/json-schemas",
       },
+      {
+        text: "Client libraries",
+        link: "/db/client-libraries",
+      },
     ],
   },
   {
@@ -84,6 +88,7 @@ const ortfodbSidebar = [
       },
     ],
   },
+
   {
     text: "CLI Reference",
     collapsed: true,
@@ -101,10 +106,7 @@ const ortfodbSidebar = [
         })),
     ],
   },
-  {
-    text: "Type definitions for Python, Rust and TypeScript",
-    link: "/db/client-libraries",
-  },
+
   {
     text: "Release notes",
     link: "/db/changelog",
