@@ -1,13 +1,17 @@
 {
   "scripts": {
     "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "docs:build": "bun run favicons:generate && bun run favicons:inject && vitepress build",
+    "docs:preview": "vitepress preview",
+    "favicons:generate": "real-favicon generate favicon.json .favicon-data.json public/ ",
+    "favicons:inject": "cp .vitepress/favicon.ts public/favicon.ts && real-favicon inject .favicon-data.json public favicon.ts && mv public/favicon.ts .vitepress/"
   },
   "devDependencies": {
+    "cli-real-favicon": "^0.0.8",
     "vitepress": "^1.1.0"
   },
   "dependencies": {
+    "htmlparser2": "^9.1.0",
     "markdown-it-deflist": "^3.0.0",
     "markdown-it-footnote": "^4.0.0"
   }

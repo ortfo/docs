@@ -145,3 +145,4 @@ dist
 
 .vitepress/dist
 .vitepress/cache
+.favicon-data.json

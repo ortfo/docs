@@ -1,6 +1,7 @@
 import { defineConfig } from "vitepress"
 import footnote from "markdown-it-footnote"
 import deflists from "markdown-it-deflist"
+import { faviconHead } from "./favicon"
 
 const ortfodbSidebar = [
   {
@@ -31,10 +32,10 @@ const ortfodbSidebar = [
         text: "Markdown",
         link: "/db/markdown",
       },
-			{
-				text: "Internationalization",
-				link: "/db/internationalization",
-			},
+      {
+        text: "Internationalization",
+        link: "/db/internationalization",
+      },
       {
         text: "Thumbnail generation",
         link: "/db/thumbnails",
@@ -94,11 +95,23 @@ const ortfodbSidebar = [
     link: "/client-libraries",
   },
 ]
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: "en-US",
   title: "ortfo",
   description: "Make & manage your own homemade portfolio easily",
+  head: [
+    ...faviconHead(),
+    [
+      "script",
+      {
+        defer: "defer",
+        "data-domain": "ortfo.org",
+        src: "https://stats.ewen.works/js/script.js",
+      },
+    ],
+  ],
   markdown: {
     config: (md) => {
       md.use(footnote)
