@@ -144,14 +144,12 @@ export default defineConfig({
   },
   themeConfig: {
     search: {
-      provider: "local",
-      // Waiting for approval from Algolia
-      // provider: "algolia",
-      // options: {
-      //   appId: "5FWPVQPO1Y",
-      //   apiKey: "9d51aebe9f31527c9dce65244aeb221b",
-      //   indexName: "ortfo-website",
-      // },
+      provider: "algolia",
+      options: {
+        appId: "JR0U8XYO7J",
+        apiKey: "8707647349521501105dcd81174f1560",
+        indexName: "ortfo",
+      },
     },
     editLink: {
       pattern: "https://github.com/ortfo/website/edit/main/:path",
@@ -180,7 +178,7 @@ export default defineConfig({
           items: [
             { text: "What is ortfo?", link: "/what-is-ortfo" },
             { text: "Quick start", link: "/getting-started" },
-						{ text: "Who's using ortfo?", link: "/users" },
+            { text: "Who's using ortfo?", link: "/users" },
           ],
         },
         {
