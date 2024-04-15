@@ -1,4 +1,4 @@
-import { defineConfig } from "vitepress"
+import { DefaultTheme, defineConfig } from "vitepress"
 import footnote from "markdown-it-footnote"
 import deflists from "markdown-it-deflist"
 import { faviconHead } from "./favicon"
@@ -33,6 +33,14 @@ const ortfodbSidebar = [
         link: "/db/markdown",
       },
       {
+        text: "Tags",
+        link: "/db/tags",
+      },
+      {
+        text: "Technologies",
+        link: "/db/technologies",
+      },
+      {
         text: "Internationalization",
         link: "/db/internationalization",
       },
@@ -56,7 +64,7 @@ const ortfodbSidebar = [
   },
   {
     text: "Exporters",
-    base: "db/exporters/",
+    base: "/db/exporters/",
     items: [
       {
         text: "Introduction",
@@ -89,12 +97,11 @@ const ortfodbSidebar = [
       { text: "completion", link: "/completion" },
     ],
   },
-
   {
     text: "Type definitions for Python, Rust and TypeScript",
-    link: "/client-libraries",
+    link: "/db/client-libraries",
   },
-]
+] satisfies DefaultTheme.SidebarItem[]
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -112,6 +119,8 @@ export default defineConfig({
       },
     ],
   ],
+  cleanUrls: true,
+  lastUpdated: true,
   markdown: {
     config: (md) => {
       md.use(footnote)
@@ -121,6 +130,16 @@ export default defineConfig({
   themeConfig: {
     search: {
       provider: "local",
+      // Waiting for approval from Algolia
+      // provider: "algolia",
+      // options: {
+      //   appId: "5FWPVQPO1Y",
+      //   apiKey: "9d51aebe9f31527c9dce65244aeb221b",
+      //   indexName: "ortfo-website",
+      // },
+    },
+    editLink: {
+      pattern: "https://github.com/ortfo/website/edit/main/:path",
     },
     logo: {
       dark: "/logo-dark.svg",
@@ -138,6 +157,7 @@ export default defineConfig({
     },
 
     sidebar: {
+      "/db/": ortfodbSidebar,
       "/guide/": [
         {
           base: "/guide/",
@@ -145,16 +165,17 @@ export default defineConfig({
           items: [
             { text: "What is ortfo?", link: "/what-is-ortfo" },
             { text: "Quick start", link: "/getting-started" },
-            { text: "JSON Schemas", link: "/json-schemas" },
           ],
         },
         {
-          text: "ortfo/db",
+          text: "ortfo/db 🗄",
           items: ortfodbSidebar,
         },
+        {
+          text: "ortfo/mk 📦",
+          items: [{ text: "To be done…", link: "/work-in-progress" }],
+        },
       ],
-
-      "/db/": ortfodbSidebar,
     },
 
     socialLinks: [{ icon: "github", link: "https://github.com/ortfo" }],

@@ -4,7 +4,11 @@ import type { JSONSchema7 } from 'json-schema';
 const props = defineProps({
 	schema: Object,
 	type: String,
-	headings: Number
+	headings: Number,
+	pick: {
+		type: Array,
+		default: () => [],
+	},
 })
 
 function selectedType(schema: JSONSchema7) {
@@ -22,12 +26,15 @@ function arrayItemsTypeTitle(items: JSONSchema7['items']) {
 }
 
 function slug(typename: string) {
-	return typename.toLowerCase().replace(/ /g, '-')
+	return typename.toLowerCase().trim().replace(/ /g, '-')
 }
 
 function selectedTypeFields(schema: JSONSchema7 | undefined) {
 	if (!schema) return []
-	return Object.entries(selectedType(schema).properties ?? [])
+	return Object.entries(selectedType(schema).properties ?? []).filter(([name, typ]) => {
+		if (props.pick.length === 0) return true
+		return props.pick.includes(name)
+	})
 }
 </script>
 
@@ -56,20 +63,37 @@ function selectedTypeFields(schema: JSONSchema7 | undefined) {
 		</template>
 	</template>
 	<template v-else>
-		<dl v-for="[name, typ] in selectedTypeFields(props.schema)">
-			<dt>{{ name }}</dt>
-			<template v-if="typ !== false && typ !== true">
-				<dd>
-					{{ typ.description || 'TODO: Documentation' }}
-				</dd>
-				<dd>
-					<template v-if="arrayItemsTypeTitle(typ.items)">
-						List of <a :href="'#' + slug(arrayItemsTypeTitle(typ.items))">{{ arrayItemsTypeTitle(typ.items)
+		<dl>
+			<template v-for="[name, typ] in selectedTypeFields(props.schema)">
+				<dt :id="slug(`${props.type ?? ''} ${name}`)">
+					{{ name }}
+					<a class="header-anchor" :href="`#${slug(`${props.type ?? ''} ${name}`)}`"
+						:aria-label="`Permalink to &quot;${name}&quot;`">​</a>
+				</dt>
+				<template v-if="typ !== false && typ !== true">
+					<dd>
+						{{ typ.description || 'TODO: Documentation' }}
+					</dd>
+					<dd>
+						<template v-if="arrayItemsTypeTitle(typ.items)">
+							List of <a :href="'#' + slug(arrayItemsTypeTitle(typ.items))">{{
+								arrayItemsTypeTitle(typ.items)
 							}}s</a>
-					</template>
-				</dd>
+						</template>
+					</dd>
 
+				</template>
 			</template>
 		</dl>
 	</template>
 </template>
+
+<style>
+dt {
+	position: relative;
+}
+
+dt:hover .header-anchor::before {
+	opacity: 1;
+}
+</style>
