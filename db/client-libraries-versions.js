@@ -42,3 +42,29 @@ export async function getGemVersion(localFilename = "") {
     }
   }
 }
+
+export async function getGoVersion(localFilename) {
+  const packageName = "github.com/ortfo/db"
+
+  try {
+    const response = await fetch(
+      `https://proxy.golang.org/${packageName}/@latest`
+    )
+    const data = await response.json()
+    if (data.Version) {
+      console.info(`Got Go version from proxy.golang.org: ${data.Version}`)
+      return data.Version
+    } else {
+      throw new Error(`Version not found for package ${packageName}`)
+    }
+  } catch (error) {
+    console.info(`Falling back to reading from local file ${localFilename}`)
+    const contents = fs.readFileSync(localFilename, "utf-8")
+    const match = contents.match(/const Version = "(.+)"/)
+    if (match) {
+      return match[1]
+    } else {
+      throw new Error(`Version not found in ${localFilename}`)
+    }
+  }
+}

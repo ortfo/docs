@@ -5,21 +5,16 @@ outline: [2, 3]
 <script setup>
   import { onMounted } from 'vue'
   import { data } from './client-libraries.data.js'
-  import { getRustVersion, getGemVersion } from './client-libraries-versions.js'
+  import { getRustVersion, getGemVersion, getGoVersion } from './client-libraries-versions.js'
 
   let versions = data.versions
 
 
   onMounted(async () => {
     // try to get fresh data on client-side
-    try {
-      versions = {
-        rust: await getRustVersion(),
-        ruby: await getGemVersion()
-      }
-    } catch(error) {
-      console.error(error)
-    }
+    versions.rust = await getRustVersion().catch(() => versions.rust)
+    versions.ruby = await getGemVersion().catch(() => versions.ruby)
+    versions.go = await getGoVersion().catch(() => versions.go)
   })
 </script>
 
@@ -48,7 +43,7 @@ outline: [2, 3]
 </a>
 
 <a href="https://pkg.go.dev/github.com/ortfo/db">
-  <img src="https://img.shields.io/github/release/ortfo/db?label=Go" alt="Go" />
+  <img :src="`https://img.shields.io/badge/Go-${ versions.go }-blue`" alt="Go" />
 </a>
 
 </div>
