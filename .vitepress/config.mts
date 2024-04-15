@@ -108,6 +108,7 @@ export default defineConfig({
   lang: "en-US",
   title: "ortfo",
   description: "Make & manage your own homemade portfolio easily",
+	srcExclude: ["**/README.md", "ortfodb/**/*.md"],
   head: [
     ...faviconHead(),
     [
