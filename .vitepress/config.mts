@@ -175,7 +175,6 @@ export default defineConfig({
       "/db/": ortfodbSidebar,
       "/guide/": [
         {
-          base: "/guide/",
           text: "Getting started",
           items: [
             { text: "What is ortfo?", link: "/guide/what-is-ortfo" },
