@@ -20,7 +20,7 @@ outline: [2, 3]
 
 # Client libraries <Badge type=warning text=beta />
 
-<div style="display: flex; justify-content: center; gap: 1em; margin: 2rem 0;">
+<div style="display: flex; justify-content: center; gap: 1em; margin: 2rem 0; flex-wrap: wrap; align-items: center">
 
 <a href="https://pypi.org/project/ortfodb/">
   <img src="https://img.shields.io/pypi/v/ortfodb" alt="PyPI" />
