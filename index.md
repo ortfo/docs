@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "ortfo:"
-  text: "Obsidian for all of your projects"
-  tagline: A great way to manage your portfolio
+  text: A portfolio website creation system that <em>scales</em>
+  tagline: Keeping a portfolio website up to date, with 100+ projects? Never been that easy.
   actions:
     - theme: brand
       text: What is ortfo?
