@@ -1,12 +1,13 @@
 {
-	"type": "module",
+  "type": "module",
   "scripts": {
-    "docs:dev": "vitepress dev",
-    "docs:build": "bun run jsonschemas:copy && bun run favicons:generate && bun run favicons:inject && vitepress build",
-    "docs:preview": "vitepress preview",
+    "dev": "bun run submodules:pull && vitepress dev",
+    "build": "bun run jsonschemas:copy && bun run favicons:generate && bun run favicons:inject && vitepress build",
+    "preview": "vitepress preview",
     "favicons:generate": "real-favicon generate favicon.json .favicon-data.json public/ ",
     "favicons:inject": "cp .vitepress/favicon.ts public/favicon.ts && real-favicon inject .favicon-data.json public favicon.ts && mv public/favicon.ts .vitepress/",
-		"jsonschemas:copy": "./copy-all-schemas"
+    "jsonschemas:copy": "./copy-all-schemas",
+    "submodules:pull": "git submodule update --init --recursive && git submodule foreach git pull origin main"
   },
   "devDependencies": {
     "@types/json-schema": "^7.0.15",
