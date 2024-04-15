@@ -1,5 +1,5 @@
 <script setup>
-  import schema from '../public/technologies.schema.json';
+  import schema from '/schemas/latest/technologies.schema.json';
 </script>
 # Technologies
 

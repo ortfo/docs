@@ -1,10 +1,11 @@
 {
   "scripts": {
     "docs:dev": "vitepress dev",
-    "docs:build": "bun run favicons:generate && bun run favicons:inject && vitepress build",
+    "docs:build": "bun run jsonschemas:copy && bun run favicons:generate && bun run favicons:inject && vitepress build",
     "docs:preview": "vitepress preview",
     "favicons:generate": "real-favicon generate favicon.json .favicon-data.json public/ ",
-    "favicons:inject": "cp .vitepress/favicon.ts public/favicon.ts && real-favicon inject .favicon-data.json public favicon.ts && mv public/favicon.ts .vitepress/"
+    "favicons:inject": "cp .vitepress/favicon.ts public/favicon.ts && real-favicon inject .favicon-data.json public favicon.ts && mv public/favicon.ts .vitepress/",
+		"jsonschemas:copy": "./copy-all-schemas"
   },
   "devDependencies": {
     "@types/json-schema": "^7.0.15",

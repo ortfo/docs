@@ -1,0 +1,32 @@
+#!/bin/bash
+if [ ! -d .git ]; then
+	echo This script must be run from the root of the repository
+	exit 1
+fi
+
+cd ortfodb
+tags=$(git tag | grep -E '^v([0-9]+\.)[0-9]+' | sort)
+latest_tag=$(echo "$tags" | tail -1)
+for tag in $tags
+do
+	# checkout that tag
+	git checkout -q $tag
+	if [ -d "schemas" ]
+	then
+		# copy the schemas as ../public/tag/schema.schema.json
+		echo "Creating $tag schemas"
+		mkdir -p ../public/$tag ../schemas/$tag
+		cp schemas/*.schema.json ../public/$tag/
+		# also copy to schemas/ for inclusion in vitepress code (can't import from assets directory...)
+		cp -r ../public/$tag -T ../schemas/$tag
+	fi
+	if [ "$tag" == "$latest_tag" ]
+	then
+		echo "Creating latest schemas from $tag"
+		cp -r ../public/$tag -T ../public/
+		# also copy to schemas/ for inclusion in vitepress code (can't import from assets directory...)
+		cp -r ../public/$tag -T ../schemas/latest
+	fi
+done
+git checkout main
+cd ..

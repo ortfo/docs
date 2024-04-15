@@ -18,39 +18,27 @@ See [`ortfodb schemas`](/db/commands/schemas.md)
 
 ### Over the network
 
-The schemas are all available on the repository in the `schemas/` directory:
+The schemas are all available on ortfo/db's repository in the `schemas/` directory, and are re-exported to the ortfo.org domain for easier access.
 
-[schemas/configuration.schema.json](https://raw.githubusercontent.com/ortfo/db/main/schemas/configuration.schema.json)
+[ortfo.org/configuration.schema.json](https://ortfo.org/configuration.schema.json)
 : The schema for the `ortfodb.yaml` [configuration file](/db/configuration.md)
 
-[schemas/database.schema.json](https://raw.githubusercontent.com/ortfo/db/main/schemas/database.schema.json)
+[ortfo.org/database.schema.json](https://ortfo.org/database.schema.json)
 : The schema for the `database.json` file (see [Database format](/db/database-format.md))
 
-[schemas/tags.schema.json](https://raw.githubusercontent.com/ortfo/db/main/schemas/tags.schema.json)
+[ortfo.org/tags.schema.json](https://ortfo.org/tags.schema.json)
 : The schema for the [tags repository](/db/tags.md)
 
-[schemas/technologies.schema.json](https://raw.githubusercontent.com/ortfo/db/main/schemas/technologies.schema.json)
+[ortfo.org/technologies.schema.json](https://ortfo.org/technologies.schema.json)
 : The schema for the [technologies repository](/db/technologies.md)
 
 #### Version pining
 
-You can always get the JSON schema for a specific version of ortfo/db by using the tag name instead of `main` in the URL. For example, to get the database JSON schema for version `v0.1.0`, you would use the following URL:
+Instead of getting the latest version, you can get a specific version by specifying it in the URL before the file name:
 
 <center style="margin-bottom: 2em">
-<span style="color:gray">https://raw.githubusercontent.com/ortfo/db/</span><strong>v0.1.0</strong><span style="color:gray">/schemas/database.schema.json</span>
+<span style="color: gray">https://</span>ortfo.org/<strong><span style="color: var(--vp-c-brand-1)">v1.2.0</span></strong>/<em>resource name</em>.schema.json
 </center>
-
-#### Shorthand URL for the latest version
-
-Instead of the long raw.githubusercontent.com URL, you can use the following shorthand URL to get the latest version of the schema:
-
-<center style="margin-bottom: 2em">
-https://<strong>ortfo.org/<em style="color: var(--vp-c-brand-1)">resource name</em>.schema.json</strong>
-</center>
-
-::: info
-In the future, you'll be able to specify a version with that shorthand URL too
-:::
 
 ## Using it in your editor
 

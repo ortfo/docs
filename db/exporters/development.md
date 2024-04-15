@@ -1,5 +1,5 @@
 <script setup>
-	import schema from '../../public/exporter.schema.json';
+	import schema from '/schemas/latest/exporter.schema.json';
 </script>
 
 # Exporters development guide

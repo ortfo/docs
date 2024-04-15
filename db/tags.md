@@ -1,5 +1,5 @@
 <script setup>
-  import schema from '../public/tags.schema.json';
+  import schema from '/schemas/latest/tags.schema.json';
 </script>
 
 # Tags

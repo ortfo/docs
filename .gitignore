@@ -161,3 +161,7 @@ public/mstile-310x310.png
 public/mstile-70x70.png
 public/safari-pinned-tab.svg
 public/site.webmanifest
+public/*.schema.json
+public/v*/*.schema.json
+public/latest/*.schema.json
+schemas/
