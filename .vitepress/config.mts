@@ -180,6 +180,7 @@ export default defineConfig({
           items: [
             { text: "What is ortfo?", link: "/what-is-ortfo" },
             { text: "Quick start", link: "/getting-started" },
+						{ text: "Who's using ortfo?", link: "/users" },
           ],
         },
         {
@@ -188,7 +189,13 @@ export default defineConfig({
         },
         {
           text: "ortfo/mk 📦",
-          items: [{ text: "To be done…", link: "/work-in-progress" }],
+          items: [{ text: "To be done…", link: "#" }],
+        },
+        {
+          text: "ortfo/gui 💻",
+          items: [
+            { text: "Work in progress…", link: "https://github.com/ortfo/gui" },
+          ],
         },
       ],
     },
