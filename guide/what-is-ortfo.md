@@ -7,7 +7,7 @@ Ortfo has the final goal of providing _everyone_ access to a great portfolio web
 
 Multiple projects are planned for the ortfo "ecosystem":
 
-[ortfo/db](/db)
+[ortfo/db](/db/getting-started.md)
 : the "database" layer: write description markdown files, get a JSON file out. Generate thumbnails, extract proeminent colors, and more
 
 ortfo/mk
