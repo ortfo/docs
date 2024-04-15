@@ -89,10 +89,16 @@ const ortfodbSidebar = [
     collapsed: true,
     items: [
       { text: "Global options", link: "/db/commands/global-options" },
-      ...subcommand.paths().map(({ params: { subcommand } }) => ({
-        text: subcommand.replace("-", " "),
-        link: `/db/commands/${subcommand}`,
-      })),
+      ...subcommand
+        .paths()
+        .filter(
+          ({ params: { subcommand } }) =>
+            !["README", "global-options"].includes(subcommand)
+        )
+        .map(({ params: { subcommand } }) => ({
+          text: subcommand.replace("-", " "),
+          link: `/db/commands/${subcommand}`,
+        })),
     ],
   },
   {

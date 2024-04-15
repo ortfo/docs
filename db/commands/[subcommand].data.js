@@ -1,7 +1,5 @@
 import { createContentLoader } from "vitepress"
-import transformer from "./transformer"
 
-export default createContentLoader("ortfodb/docs/ortfodb_*.md", {
+export default createContentLoader("ortfodb/docs/*.md", {
   render: true,
-  transform: transformer,
 })

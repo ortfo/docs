@@ -7,6 +7,6 @@ editLink: false
 </script>
 
 <main v-html="
-  commands.find(command => command.url.endsWith(`ortfodb_${$params.subcommand.replaceAll('-', '_')}`)).html
+  commands.find(command => command.url.endsWith($params.subcommand)).html
 ">
 </main>
