@@ -178,9 +178,9 @@ export default defineConfig({
           base: "/guide/",
           text: "Getting started",
           items: [
-            { text: "What is ortfo?", link: "/what-is-ortfo" },
-            { text: "Quick start", link: "/getting-started" },
-            { text: "Who's using ortfo?", link: "/users" },
+            { text: "What is ortfo?", link: "/guide/what-is-ortfo" },
+            { text: "Quick start", link: "/guide/getting-started" },
+            { text: "Who's using ortfo?", link: "/guide/users" },
           ],
         },
         {
