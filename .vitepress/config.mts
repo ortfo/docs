@@ -120,6 +120,7 @@ export default defineConfig({
   description: "Make & manage your own homemade portfolio easily",
   srcExclude: ["**/README.md", "ortfodb/**/*.md"],
   head: [
+    ["link", { rel: "stylesheet", href: "/fonts/import.css" }],
     ...faviconHead(),
     [
       "script",
