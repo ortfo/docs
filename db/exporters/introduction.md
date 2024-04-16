@@ -1,3 +1,7 @@
+---
+next:
+  text: Uploading with exporters
+---
 
 # Exporters
 
@@ -38,23 +42,29 @@ exporters:
 For now, most of the built-in exporters do not work on Windows
 :::
 
+<!-- ::: tip New in v1.4.0 (not out yet)
+
+Run [`ortfodb exporters list`](/db/commands/exporters-list) to get the list of all built-in exporters.
+
+Run [`ortfodb exporters doc <name>`](/db/commands/exporters-doc) to get help on a specific exporter.
+
+::: -->
+
 ### Uploading
 
-Most of the [built-in exporters](/db/exporters/builtin.md) provide functionnality to upload the generated database.json file to various services, including:
+Most built-in exporters provide functionnality to upload the generated database.json file in various ways. See [Uploading with exporters](/db/exporters/uploading.md)
 
-[Cloud services](./builtin.md#cloud-services-google-drive-dropbox-etc)
-: most cloud services (Google Drive, Dropbox, etc.)
+### Static site generators
 
-Remote servers
-: via [SSH](./builtin.md#ssh),
-: via [FTP or SFTP](./builtin.md#sftp)
-
-[Git repositories](./builtin.md#git)
-: by cloning a repo, comitting the database.json to it and pushing the commit
+ortfo/db provides exporters to more conviently build your portfolio using some of the most popular static site generators. See [Static site generators](./builtin.md#static-site-generators)
 
 ### Exporting to other formats
 
 ortfo/db ships with a rudimentary [SQL exporter](./builtin.md#sql) to fill up a "real" database
+
+### Other things
+
+See [Other exporters](./misc.md).
 
 ## Running your own commands
 

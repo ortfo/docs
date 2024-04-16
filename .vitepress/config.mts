@@ -75,8 +75,48 @@ const ortfodbSidebar = [
         link: "/db/exporters/introduction",
       },
       {
-        text: "Built-in exporters (SSH, FTP, Git, Cloud services)",
-        link: "/db/exporters/builtin",
+        text: "Uploading to...",
+        link: "/db/exporters/uploading",
+        items: [
+          {
+            text: "Cloud storage services",
+            link: "/db/exporters/uploading#cloud-service-providers",
+          },
+          {
+            text: "Web servers",
+            link: "/db/exporters/uploading#web-servers",
+          },
+          {
+            text: "Git repositories",
+            link: "/db/exporters/uploading#git-repositories",
+          },
+        ],
+      },
+      {
+        text: "Using a static site generator",
+        link: "/db/exporters/static-site-generators",
+        items: ["Hugo", "11ty"].map((name) => ({
+          text: name,
+          link: `/db/exporters/static-site-generators#${name.toLowerCase()}`,
+        })),
+      },
+      {
+        text: "Exporting to other formats",
+				link: "/db/exporters/formats",
+        // items: [
+        //   {
+        //     text: "SQL",
+        //     link: "/db/exporters/formats#sql",
+        //   },
+        // ],
+      },
+      {
+        text: "Other exporters",
+        link: "/db/exporters/misc",
+        items: ["copy", "localize", "webhook"].map((name) => ({
+          text: name,
+          link: `/db/exporters/misc#${name}`,
+        })),
       },
       {
         text: "The custom exporter",
