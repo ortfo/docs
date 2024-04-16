@@ -11,7 +11,7 @@ jobs:
           submodules: recursive
       - name: Update submodules
         run: |
-          git submodule update --init --recursive -f --remote - "${{ github.event.client_payload.module }}"
+          git submodule update --init --recursive -f --remote -- "${{ github.event.client_payload.module }}"
           git config --global user.name "Github Actions"
           git config --global user.email "noreply@github.com"
           git commit -am "👽 Update submodule ${{ github.event.client_payload.module }} to ${{ github.event.client_payload.sha }}"
@@ -20,4 +20,4 @@ jobs:
         uses: peter-evans/repository-dispatch@v3
         with:
           event-type: submodules-updated
-          repository: ${{ github.repository }}
+          repository: "${{ github.repository }}"
