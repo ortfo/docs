@@ -5,6 +5,7 @@ name: Deploy documentation site to Pages
 on:
   # Runs on pushes targeting the `main` branch. Change this to `master` if you're
   # using the `master` branch as the default branch.
+  workflow_dispatch:
   push:
     branches: [main]
 
