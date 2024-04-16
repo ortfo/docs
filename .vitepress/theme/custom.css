@@ -17,6 +17,14 @@ h1, h2, h3, h4, h5, h6, :is(h1, h2, h3, h4, h5, h6) * {
 	font-family: 'IBM Plex Sans' !important;
 } */
 
+video, img:not([src^="https://img.shields.io"]), table {
+	border-radius: 8px;
+}
+/*
+.vp-doc td {
+	border: 3px solid var(--vp-c-brand-1);
+} */
+
 dt.technical {
 	font-family: Victor Mono;
 }
