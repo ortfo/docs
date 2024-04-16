@@ -17,11 +17,6 @@ Linux
 : [32-bit (older computers)](https://github.com/ortfo/db/releases/latest/download/ortfodb_linux_386)
 : [ARM64 (Raspberry Pi, etc.)](https://github.com/ortfo/db/releases/latest/download/ortfodb_linux_arm64)
 
-### Using `go`
-
-```bash
-go install github.com/ortfo/db/cmd@latest
-```
 
 ### Package managers
 
@@ -137,6 +132,12 @@ scoop install ortfodb
 ```
 
 :::
+
+### Using `go`
+
+```bash
+go install github.com/ortfo/db/cmd@latest
+```
 
 ### Building from source
 
