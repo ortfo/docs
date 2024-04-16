@@ -65,7 +65,7 @@ function selectedTypeFields(schema: JSONSchema7 | undefined) {
 	<template v-else>
 		<dl>
 			<template v-for="[name, typ] in selectedTypeFields(props.schema)">
-				<dt :id="slug(`${props.type ?? ''} ${name}`)">
+				<dt class="technical" :id="slug(`${props.type ?? ''} ${name}`)">
 					{{ name }}
 					<a class="header-anchor" :href="`#${slug(`${props.type ?? ''} ${name}`)}`"
 						:aria-label="`Permalink to &quot;${name}&quot;`">​</a>

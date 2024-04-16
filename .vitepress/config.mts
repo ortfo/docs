@@ -1,4 +1,4 @@
-import { DefaultTheme, defineConfig } from "vitepress"
+import { DefaultTheme, defineConfig, HeadConfig } from "vitepress"
 import footnote from "markdown-it-footnote"
 import deflists from "markdown-it-deflist"
 import { faviconHead } from "./favicon"
@@ -121,6 +121,13 @@ export default defineConfig({
   srcExclude: ["**/README.md", "ortfodb/**/*.md"],
   head: [
     ["link", { rel: "stylesheet", href: "/fonts/import.css" }],
+    [
+      "link",
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap",
+      },
+    ],
     ...faviconHead(),
     [
       "script",

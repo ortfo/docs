@@ -5,6 +5,20 @@
   --vp-c-brand-2: #d16f07;
   --vp-c-brand-3: #bd6d17;
   --vp-font-family-mono: 'Victor Mono', 'Fira Code', 'Monaco', monospace;
+  /* --vp-font-family-base: 'IBM Plex Sans' */
+  --vp-font-family-base: 'DM Sans'
+}
+
+h1, h2, h3, h4, h5, h6, :is(h1, h2, h3, h4, h5, h6) * {
+	font-family: 'DM Sans';
+}
+
+/* .VPHero {
+	font-family: 'IBM Plex Sans' !important;
+} */
+
+dt.technical {
+	font-family: Victor Mono;
 }
 
 dt {
