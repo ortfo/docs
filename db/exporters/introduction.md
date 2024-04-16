@@ -25,7 +25,7 @@ exporters:  // [!code focus]
 
 ### Example
 
-Here's an example configuration for the [FTP exporter](./builtin.md#sftp)
+Here's an example configuration for the [FTP exporter](./uploading.md#sftp)
 
 ```yaml
 exporters:
@@ -56,11 +56,11 @@ Most built-in exporters provide functionnality to upload the generated database.
 
 ### Static site generators
 
-ortfo/db provides exporters to more conviently build your portfolio using some of the most popular static site generators. See [Static site generators](./builtin.md#static-site-generators)
+ortfo/db provides exporters to more conviently build your portfolio using some of the most popular static site generators. See [Static site generators](./static-site-generators)
 
 ### Exporting to other formats
 
-ortfo/db ships with a rudimentary [SQL exporter](./builtin.md#sql) to fill up a "real" database
+ortfo/db ships with a rudimentary [SQL exporter](./formats.md#sql) to fill up a "real" database
 
 ### Other things
 

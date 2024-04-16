@@ -36,7 +36,7 @@ ortfodb exporters init my-exporter
 
 ### Example
 
-As an example, this is the manifest for the built-in [SSH exporter](./builtin.md#ssh)
+As an example, this is the manifest for the built-in [SSH exporter](./uploading.md#ssh)
 
 <<< @/ortfodb/exporters/ssh.yaml
 
