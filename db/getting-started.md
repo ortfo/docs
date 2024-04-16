@@ -22,10 +22,15 @@ This is my first time packaging a program to practically all package managers. I
 
 #### Linux
 
+::: warning About integrity checks
+Checksums are not calculated correctly for the moment, I don't know why
+:::
+
 ::: code-group
 
 ```bash [Arch Linux (AUR)]
-paru -S ortfodb-bin
+# skipping integrity checks since they are not calculated correctly for the moment
+paru -S ortfodb-bin --mflags --skipinteg
 ```
 
 ```bash [Ubuntu, Debian]
