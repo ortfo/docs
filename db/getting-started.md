@@ -2,7 +2,20 @@
 ## Installation
 ### Binaries
 
-You can download the latest binaries for Linux, MacOS and Windows from the [releases page](https://github.com/ortfo/db/releases).
+You can download the latest binaries for Linux, MacOS and Windows from the [releases page](https://github.com/ortfo/db/releases/latest).
+
+Windows
+: [64-bit (use this if you don't know)](https://github.com/ortfo/db/releases/latest/download/ortfodb_windows_amd64.exe)
+: [32-bit (older computers)](https://github.com/ortfo/db/releases/latest/download/ortfodb_windows_386.exe)
+
+Mac OS
+: [64-bit](https://github.com/ortfo/db/releases/latest/download/ortfodb_darwin_amd64)
+: [ARM64 (M1 Macs)](https://github.com/ortfo/db/releases/latest/download/ortfodb_darwin_arm64)
+
+Linux
+: [64-bit](https://github.com/ortfo/db/releases/latest/download/ortfodb_linux_amd64)
+: [32-bit (older computers)](https://github.com/ortfo/db/releases/latest/download/ortfodb_linux_386)
+: [ARM64 (Raspberry Pi, etc.)](https://github.com/ortfo/db/releases/latest/download/ortfodb_linux_arm64)
 
 ### Using `go`
 
@@ -25,6 +38,8 @@ This is my first time packaging a program to practically all package managers. I
 ::: warning About integrity checks
 Checksums are not calculated correctly for the moment, I don't know why
 :::
+
+##### Distro-specific
 
 ::: code-group
 
@@ -60,7 +75,29 @@ sudo dnf install ortfodb
 # using Ubuntu's install instructions may work, idk
 ```
 
-```bash [Others: with Homebrew]
+```bash [Nix]
+# coming soon™
+```
+
+:::
+
+##### Universal
+
+::: code-group
+
+```bash [Snap]
+# coming soon™
+```
+
+```bash [Flatpak]
+# coming soon™
+```
+
+```bash [AppImage]
+# coming soon™
+```
+
+```bash [Homebrew]
 # on its own tap for the moment
 brew tap ortfo/brew-ortfodb/ortfodb
 brew install ortfodb
