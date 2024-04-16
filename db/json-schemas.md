@@ -1,3 +1,13 @@
+<script setup>
+  import { onMounted } from 'vue'
+  import { getGoVersion } from './client-libraries-versions.js'
+  import { data } from './json-schemas.data.js'
+  let version = data.version
+  onMounted(async () => {
+    version = await getGoVersion().catch(() => "v1.2.0")
+  })
+</script>
+
 # JSON Schemas
 
 ortfo/db exports [JSON Schemas](https://json-schema.org/) for the different data files it uses.
@@ -37,7 +47,7 @@ The schemas are all available on ortfo/db's repository in the `schemas/` directo
 Instead of getting the latest version, you can get a specific version by specifying it in the URL before the file name:
 
 <center style="margin-bottom: 2em">
-<span style="color: gray">https://</span>ortfo.org/<strong><span style="color: var(--vp-c-brand-1)">v1.2.0</span></strong>/<em>resource name</em>.schema.json
+<span style="color: gray">https://</span>ortfo.org/<strong><span style="color: var(--vp-c-brand-1)">{{ version }}</span></strong>/<em>resource name</em>.schema.json
 </center>
 
 ## Using it in your editor
