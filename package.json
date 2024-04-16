@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "dev": "bun run submodules:pull && vitepress dev",
+    "dev": "vitepress dev",
     "build": "bun run jsonschemas:copy && bun run favicons:generate && bun run favicons:inject && vitepress build",
     "preview": "vitepress preview",
     "favicons:generate": "real-favicon generate favicon.json .favicon-data.json public/ ",
