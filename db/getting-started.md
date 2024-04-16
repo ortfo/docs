@@ -34,7 +34,7 @@ paru -S ortfodb-bin --mflags --skipinteg
 ```
 
 ```bash [Ubuntu, Debian]
-echo "deb [trusted=yes] https://apt.ortfo.org/ /" | sudo tee /etc/apt/sources.list.d/ortfo.list
+echo "deb [trusted=yes] https://deb.ortfo.org/ /" | sudo tee /etc/apt/sources.list.d/ortfo.list
 sudo apt update
 sudo apt install ortfodb
 ```
