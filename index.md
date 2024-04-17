@@ -6,6 +6,9 @@ hero:
   name: "ortfo:"
   text: A portfolio website creation system that <em>scales</em>
   tagline: Keeping a portfolio website up to date, with 100+ projects? Never been that easy.
+  image:
+    src: /logo.png
+    alt: A demo of ortfo/db's features
   actions:
     - theme: brand
       text: What is ortfo?
@@ -13,6 +16,9 @@ hero:
     - theme: alt
       text: Getting Started
       link: /guide/getting-started
+    - theme: alt
+      text: See it in action
+      link: /users
 
 features:
   - icon: 📦

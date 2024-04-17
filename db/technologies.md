@@ -1,9 +1,24 @@
 <script setup>
   import schema from '/schemas/latest/technologies.schema.json';
 </script>
+
 # Technologies
 
 ortfo/db has a concept of _technologies_. This allows you to specify with what tools the work was made. Note that the term is intended to be very broad-reaching: if you are describing a painting, for example, “oil paint” and “canvas” would be considered technologies. If you are describing a website, “HTML” and “CSS” would be considered technologies.
+
+## Usage example
+
+<div class="side-by-side">
+  <figure>
+    <img src="/examples/technologies.png"></img>
+    <figcaption>Showing technologies used to make a work <a href="https://ewen.works/distilatex">on ewen.works</a></figcaption>
+  </figure>
+
+  <figure>
+    <img src="/examples/technologies-index.png"></img>
+    <figcaption>Showing all works made with Photoshop at <a href="https://ewen.works/using/photoshop">ewen.works/using/photoshop</a></figcaption>
+  </figure>
+</div>
 
 ## Declaration
 
@@ -53,9 +68,7 @@ See [Declaring JSON Schemas on files](/db/json-schemas.md#on-files-directly)
 
 ### Properties
 
-
 <JSONSchema :schema :headings="4" type="Technology" />
-
 
 ## Usage
 

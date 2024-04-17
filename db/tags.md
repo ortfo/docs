@@ -6,6 +6,14 @@
 
 Tags are a way to categorize your different projects.
 
+## Usage example
+
+<figure>
+  <img src="/examples/tags-index.png"></img>
+  <figcaption>Show all works tagged "command-line" <a href="https://ewen.works/command-line">on ewen.works</a></figcaption>
+</figure>
+
+
 ## Declaration
 
 You can define all valid tags for your works in a central place with a `tags.yaml` file.

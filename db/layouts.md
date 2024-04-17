@@ -2,6 +2,14 @@
 
 ortfo/db allows you to declare that some [content blocks](/db/your-first-description-file.md#blocks) are arranged in a more interesting way than just one after the other.
 
+## Usage example
+
+<figure>
+  <img src="/examples/complex-layouts.png" autoplay muted loop></img>
+  <figcaption><a href="https://ewen.works/subfeed-for-spotify">On ewen.works</a></figcaption>
+</figure>
+
+
 ## Declaring layouts
 
 Layouts are declared in the metadata frontmatter of your description file:

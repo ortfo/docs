@@ -7,6 +7,34 @@ next:
 
 ortfo/db includes a plugin-like system that allows you to run shell commands at various stages of the build process.
 
+## Usage example
+
+Running a build with the [copy](/db/exporters/misc.md#copy), [ssh](/db/exporters/uploading.md#ssh) and [cloud](/db/exporters/uploading.md#cloud) exporters enabled
+
+
+```ansi{11-99}
+[1m[2m$[0m ortfodb build[0m
+[1m[35m          Using[0m[0m exporter [1mcopy:[0m [2mcopy the output database file to one or more locations[0m
+[1m[35m          Using[0m[0m exporter [1mssh:[0m [2mupload the database to an SSH server using scp or rsync.[0m
+[1m[35m          Using[0m[0m exporter [1mcloud:[0m [2mexport the database to a cloud storage service using rclone.[0m
+[1m[2m        Reusing[0m smooth-cursorify[0m
+[1m[2m        Reusing[0m spotify-playlist-covers[0m
+[1m[2m        Reusing[0m subfeed-for-spotify[0m
+[1m[2m        Reusing[0m trigonometry-synth[0m
+[1m[2m        Reusing[0m 雨と雪[0m
+[1m[32m       Finished[0m[0m compiling to database.json in 0s
+[1m[36m        Copying[0m[0m database to [1m~/projects/database.json, ~/projects/ortfo/website/public/example-database.json[0m[0m
+[1m[34m      Uploading[0m[0m database.json to [1mewen@ewen.works:~/www/media.ewen.works/works.json [2musing rsync  [0m[0m
+[1m[34m              >[0m[0m 1.181.355 100%  187,11MB/s    0:00:00 (xfr#1, to-chk=0/1)
+[1m[34m      Uploading[0m[0m database.json to googledrive:projects/database.json, [2mwith rclone[0m
+[1m[34m              >[0m[0m Transferring:
+[1m[34m              >[0m[0m  *  database.json:100% /1.127Mi, 1.126Mi/s, 0s
+[1m[34m              >[0m[0m Transferred:            1 / 1, 100%
+[1m[34m              >[0m[0m Elapsed time:         3.0s
+```
+
+
+
 ## Usage
 
 To enable and configure exporters, add an `exporters` field to your `ortfodb.yaml` configuration file:

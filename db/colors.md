@@ -2,6 +2,13 @@
 
 ortfo/db supports extracting the most proeminent colors from the works' images. This can be useful to give a 🎀 colorful touch 🎀 to your website
 
+## Usage example
+
+<figure>
+  <video src="/examples/color-extraction.mp4" autoplay muted loop></video>
+  <figcaption>On <a href="https://ewen.works">ewen.works</a></figcaption>
+</figure>
+
 ## Configuration
 
 Enable it in [`ortfodb.yaml`](/db/configuration.md):

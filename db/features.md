@@ -25,7 +25,7 @@ features:
     icon: 🛠️
   - icon: 🗃️
     title: Scattered mode
-    details: Put your portfolio's articles alongside your projects themselves
+    details: Store your portfolio's articles alongside the projects themselves
     link: /db/scattered-mode
   - title: Thumbnail generation
     details: Automatically generate thumbnails for your projects' media files
@@ -44,6 +44,7 @@ features:
     icon: 🌐
   - title: Client libraries
     details: Use the generated database in your code with autocompletion and type safety
+    link: /db/client-libraries
     icon: 📚
   - title: Exporters
     details: Send your database file to a web server, a cloud storage service, or use it in your favorite static site generator

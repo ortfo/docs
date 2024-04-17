@@ -17,8 +17,20 @@ h1, h2, h3, h4, h5, h6, :is(h1, h2, h3, h4, h5, h6) * {
 	font-family: 'IBM Plex Sans' !important;
 } */
 
-video, img:not([src^="https://img.shields.io"]), table {
+video, img:not([src^="https://img.shields.io"]), table, iframe, .iframe-container {
 	border-radius: 8px;
+}
+
+iframe {
+	border: none;
+	background: var(--vp-c-gray-soft);
+}
+
+.iframe-container {
+	height: 100%;
+	width: 100%;
+	padding: 1rem;
+	background: var(--vp-c-gray-soft);
 }
 /*
 .vp-doc td {
@@ -43,4 +55,28 @@ dt::before {
 dd {
 	margin-top: 0.25em;
 	margin-left: 2.5em;
+}
+
+figure {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	align-items: center;
+	text-align: center;
+}
+
+figure figcaption {
+	opacity: 0.75;
+}
+
+.side-by-side {
+	display: flex;
+	gap: 1em;
+	flex-wrap: wrap;
+}
+
+.side-by-side figure {
+	flex: 1;
+	min-width: 200px;
 }
