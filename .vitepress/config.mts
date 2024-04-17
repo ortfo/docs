@@ -17,6 +17,10 @@ const ortfodbSidebar = [
         link: "/db/your-first-description-file",
       },
       {
+        text: "Building your database",
+        link: "/db/building",
+      },
+      {
         text: "Database format",
         link: "/db/database-format",
       },
@@ -154,6 +158,30 @@ const ortfodbSidebar = [
   },
 ] satisfies DefaultTheme.SidebarItem[]
 
+const defaultSidebar = [
+	{
+		text: "Getting started",
+		items: [
+			{ text: "What is ortfo?", link: "/guide/what-is-ortfo" },
+			{ text: "Quick start", link: "/guide/getting-started" },
+			{ text: "Who's using ortfo?", link: "/users" },
+		],
+	},
+	{
+		text: "ortfo/db 🗄",
+		items: ortfodbSidebar,
+	},
+	{
+		text: "ortfo/mk 📦",
+		items: [{ text: "To be done…", link: "#" }],
+	},
+	{
+		text: "ortfo/gui 💻",
+		items: [
+			{ text: "Work in progress…", link: "https://github.com/ortfo/gui" },
+		],
+	},
+]
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: "en-US",
@@ -221,30 +249,8 @@ export default defineConfig({
 
     sidebar: {
       "/db/": ortfodbSidebar,
-      "/guide/": [
-        {
-          text: "Getting started",
-          items: [
-            { text: "What is ortfo?", link: "/guide/what-is-ortfo" },
-            { text: "Quick start", link: "/guide/getting-started" },
-            { text: "Who's using ortfo?", link: "/users" },
-          ],
-        },
-        {
-          text: "ortfo/db 🗄",
-          items: ortfodbSidebar,
-        },
-        {
-          text: "ortfo/mk 📦",
-          items: [{ text: "To be done…", link: "#" }],
-        },
-        {
-          text: "ortfo/gui 💻",
-          items: [
-            { text: "Work in progress…", link: "https://github.com/ortfo/gui" },
-          ],
-        },
-      ],
+      "/guide/": defaultSidebar,
+			"/users": defaultSidebar,
     },
 
     socialLinks: [{ icon: "github", link: "https://github.com/ortfo" }],

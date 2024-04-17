@@ -139,7 +139,9 @@ content
 
 ##### Media blocks
 
-TODO. Here's the Go documentation in the meantime:
+TODO.  See [the go documentation for `Media`](https://pkg.go.dev/github.com/ortfo/db#Media) in the meantime.
+
+Here are the attributes:
 
 ```go
 Alt               string                        `json:"alt"`
@@ -158,6 +160,7 @@ ThumbnailsBuiltAt string                        `json:"thumbnailsBuiltAt"`
 Attributes        MediaAttributes               `json:"attributes"`
 Analyzed          bool                          `json:"analyzed"` // whether the media has been analyzed
 ```
+
 
 ##### Link blocks
 

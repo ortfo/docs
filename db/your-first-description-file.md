@@ -27,6 +27,12 @@ database/
 If you prefer to put your description files alongside your projects themselves instead of having everything in a central folder somewhere else, check out [Scattered mode](/db/scattered-mode).
 :::
 
+## Creating a `description.md` file quickly with some pre-filled metadata
+
+You can use the [`ortfodb add`](/db/commands/add) command to quickly create a new description.md file. Some metadata will be pre-determined: for example, the creation date will default to the last git commit's date, if the project you're referencing is a git repository.
+
+<video src="/db/demo-add.mp4" controls autoplay muted />
+
 ## What do I write in it?
 
 ### An example
