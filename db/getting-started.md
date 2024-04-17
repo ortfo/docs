@@ -30,17 +30,12 @@ This is my first time packaging a program to practically all package managers. I
 
 #### Linux
 
-::: warning About integrity checks
-Checksums are not calculated correctly for the moment, I don't know why
-:::
-
 ##### Distro-specific
 
 ::: code-group
 
 ```bash [Arch Linux (AUR)]
-# skipping integrity checks since they are not calculated correctly for the moment
-paru -S ortfodb-bin --mflags --skipinteg
+paru -S ortfodb-bin
 ```
 
 ```bash [Ubuntu, Debian]
@@ -50,11 +45,11 @@ sudo apt install ortfodb
 ```
 
 ```bash [Fedora]
-# might not work, the packaging infra i'm using only talks about yum...
+# waiting on https://github.com/goreleaser/goreleaser/issues/3136 to add it to COPR
 sudo dnf -y install dnf-plugins-core
 sudo dnf config-manager --add-repo https://rpm.ortfo.org/
-sudo dnf install ortfodb
-# waiting on https://github.com/goreleaser/goreleaser/issues/3136 to add it to COPR
+# rpm.ortfo.org is not signed yet, so we need to disable GPG checks
+sudo dnf --nogpgcheck install ortfodb
 ```
 
 ```bash [Alpine Linux]
