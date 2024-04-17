@@ -15,18 +15,18 @@ hero:
       link: /guide/getting-started
 
 features:
+  - icon: 📦
+    title: Organize your projects' articles easily
+    details: With Scattered mode, you can keep your portfolio articles in the same directory as your projects.
+    link: /db/scattered-mode
   - icon: ✨
     title: Batteries-included
     details: ortfo comes with all of what you need, such as Thumbnail generation, Tags, Complex layouts, and plenty more.
-    link: /db/thumbnails
+    link: /db/features
   - icon: 📝
     title: Standards-based
     details: Describe your works in Markdown files. Export everything into a JSON file. It's future-proof.
     link: /db/your-first-description-file
-  - icon: 📦
-    title: Easy to organize
-    details: With Scattered mode, you can keep your portfolio articles in the same directory as your projects.
-    link: /db/scattered-mode
   - icon: 🔧
     title: Extensible
     details: ortfo features a rich exporter plugin system that you can very easily tap into by writing a single YAML file.

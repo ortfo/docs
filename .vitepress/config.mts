@@ -24,6 +24,7 @@ const ortfodbSidebar = [
   },
   {
     text: "Features",
+    link: "/db/features",
     items: [
       {
         text: "Scattered mode",
@@ -102,7 +103,7 @@ const ortfodbSidebar = [
       },
       {
         text: "Exporting to other formats",
-				link: "/db/exporters/formats",
+        link: "/db/exporters/formats",
         // items: [
         //   {
         //     text: "SQL",
