@@ -3,6 +3,7 @@ import footnote from "markdown-it-footnote"
 import deflists from "markdown-it-deflist"
 import { faviconHead } from "./favicon"
 import subcommand from "../db/commands/[subcommand].paths"
+import { seoTags } from "./seo"
 
 const ortfodbSidebar = [
   {
@@ -159,28 +160,28 @@ const ortfodbSidebar = [
 ] satisfies DefaultTheme.SidebarItem[]
 
 const defaultSidebar = [
-	{
-		text: "Getting started",
-		items: [
-			{ text: "What is ortfo?", link: "/guide/what-is-ortfo" },
-			{ text: "Quick start", link: "/guide/getting-started" },
-			{ text: "Who's using ortfo?", link: "/users" },
-		],
-	},
-	{
-		text: "ortfo/db 🗄",
-		items: ortfodbSidebar,
-	},
-	{
-		text: "ortfo/mk 📦",
-		items: [{ text: "To be done…", link: "#" }],
-	},
-	{
-		text: "ortfo/gui 💻",
-		items: [
-			{ text: "Work in progress…", link: "https://github.com/ortfo/gui" },
-		],
-	},
+  {
+    text: "Getting started",
+    items: [
+      { text: "What is ortfo?", link: "/guide/what-is-ortfo" },
+      { text: "Quick start", link: "/guide/getting-started" },
+      { text: "Who's using ortfo?", link: "/users" },
+    ],
+  },
+  {
+    text: "ortfo/db 🗄",
+    items: ortfodbSidebar,
+  },
+  {
+    text: "ortfo/mk 📦",
+    items: [{ text: "To be done…", link: "#" }],
+  },
+  {
+    text: "ortfo/gui 💻",
+    items: [
+      { text: "Work in progress…", link: "https://github.com/ortfo/gui" },
+    ],
+  },
 ]
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -197,6 +198,7 @@ export default defineConfig({
       },
     ],
     ...faviconHead(),
+    ...seoTags,
     [
       "script",
       {
@@ -250,7 +252,7 @@ export default defineConfig({
     sidebar: {
       "/db/": ortfodbSidebar,
       "/guide/": defaultSidebar,
-			"/users": defaultSidebar,
+      "/users": defaultSidebar,
     },
 
     socialLinks: [{ icon: "github", link: "https://github.com/ortfo" }],
