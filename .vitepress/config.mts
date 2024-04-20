@@ -1,9 +1,8 @@
-import deflists from "markdown-it-deflist"
+import { DefaultTheme, defineConfig, HeadConfig } from "vitepress"
 import footnote from "markdown-it-footnote"
-import lightTheme from "tm-themes/themes/one-light.json" assert { type: "json" }
-import { DefaultTheme, defineConfig } from "vitepress"
-import subcommand from "../db/commands/[subcommand].paths"
+import deflists from "markdown-it-deflist"
 import { faviconHead } from "./favicon"
+import subcommand from "../db/commands/[subcommand].paths"
 import { seoTags } from "./seo"
 
 const ortfodbSidebar = [
@@ -217,15 +216,9 @@ export default defineConfig({
       md.use(deflists)
     },
     theme: {
-      // Waiting for https://github.com/shikijs/textmate-grammars-themes/pull/48 to use 'one-light' instead of having to import it
-      light: {
-        ...lightTheme,
-        settings: lightTheme.tokenColors,
-        fg: lightTheme.colors["foreground"],
-        bg: lightTheme.colors["background"],
-        type: "light",
-      },
-      // light: "one-light",
+      // Waiting for https://github.com/shikijs/textmate-grammars-themes/pull/48
+      // light: "snazzy-light",
+      light: "github-light",
       dark: "one-dark-pro",
     },
   },
