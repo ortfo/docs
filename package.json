@@ -2,11 +2,12 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev",
-    "build": "bun run jsonschemas:copy && bun run favicons:generate && bun run favicons:inject && vitepress build",
+    "build": "bun run ortfodb:copy && bun run jsonschemas:copy && bun run favicons:generate && bun run favicons:inject && vitepress build",
     "preview": "vitepress preview",
     "favicons:generate": "real-favicon generate favicon.json .favicon-data.json public/ ",
     "favicons:inject": "cp .vitepress/favicon.ts public/favicon.ts && real-favicon inject .favicon-data.json public favicon.ts && mv public/favicon.ts .vitepress/",
     "jsonschemas:copy": "./copy-all-schemas",
+	"ortfodb:copy": "rm -r db/; cp -r ortfodb/docs db/",
     "submodules:pull": "git submodule update --init --recursive --remote"
   },
   "devDependencies": {

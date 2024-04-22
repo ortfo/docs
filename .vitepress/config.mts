@@ -2,8 +2,8 @@ import { DefaultTheme, defineConfig, HeadConfig } from "vitepress"
 import footnote from "markdown-it-footnote"
 import deflists from "markdown-it-deflist"
 import { faviconHead } from "./favicon"
-import subcommand from "../db/commands/[subcommand].paths"
 import { seoTags } from "./seo"
+import { readdirSync } from "node:fs"
 
 const ortfodbSidebar = [
   {
@@ -140,16 +140,15 @@ const ortfodbSidebar = [
     collapsed: true,
     items: [
       { text: "Global options", link: "/db/commands/global-options" },
-      ...subcommand
-        .paths()
-        .filter(
-          ({ params: { subcommand } }) =>
-            !["README", "global-options"].includes(subcommand)
-        )
-        .map(({ params: { subcommand } }) => ({
-          text: subcommand.replace("-", " "),
-          link: `/db/commands/${subcommand}`,
-        })),
+      ...readdirSync("db/commands")
+        .map((file) => {
+          const name = file.replace(/\.md$/, "")
+          return {
+            text: `ortfodb ${name.replace(/-/g, " ")}`,
+            link: `/db/commands/${name}`,
+          }
+        })
+        .filter(({ link }) => link !== "/db/commands/global-options"),
     ],
   },
 
@@ -188,7 +187,7 @@ export default defineConfig({
   lang: "en-US",
   title: "ortfo",
   description: "Make & manage your own homemade portfolio easily",
-  srcExclude: ["**/README.md", "ortfodb/**/*.md"],
+  srcExclude: ["**/README.md", "ortfodb/**/*.md", "ortfodb/docs/"],
   head: [
     [
       "link",
@@ -232,7 +231,13 @@ export default defineConfig({
       },
     },
     editLink: {
-      pattern: "https://github.com/ortfo/website/edit/main/:path",
+      pattern: ({ filePath }) =>
+        filePath.startsWith("db/")
+          ? `https://github.com/ortfo/db/edit/main/docs/${filePath.replace(
+              /^db\//,
+              ""
+            )}`
+          : `https://github.com/ortfo/website/edit/main/${filePath}`,
     },
     logo: {
       dark: "/logo-dark.svg",
